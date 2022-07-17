@@ -28,3 +28,11 @@ MAKE_AUTO_HOOK_MATCH(DistortionWalls, &GlobalNamespace::ConditionalMaterialSwitc
 
         DistortionWalls(instance);
 }
+
+MAKE_AUTO_HOOK_MATCH(Activation_Awake, &GlobalNamespace::ConditionalActivation::Awake, void, GlobalNamespace::ConditionalActivation* instance)
+{
+    Activation_Awake(instance);
+
+    instance->get_gameObject()->SetActive(true);
+    UnityEngine::QualitySettings::set_antiAliasing(1);
+}

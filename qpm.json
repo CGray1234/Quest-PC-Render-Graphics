@@ -2,12 +2,12 @@
   "sharedDir": "shared",
   "dependenciesDir": "extern",
   "info": {
-    "name": "PC Graphics",
-    "id": "PC-Graphics",
+    "name": "PC Render Graphics Distortions",
+    "id": "PC-Render-Graphics-Distortions",
     "version": "0.1.0",
-    "url": null,
+    "url": "https://github.com/CGray1234/Quest-PC-Graphics/tree/distortion-walls-only",
     "additionalData": {
-      "overrideSoName": "libPC-Graphics.so"
+      "overrideSoName": "libPC-Render-Graphics-Distortions.so"
     }
   },
   "dependencies": [

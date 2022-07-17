@@ -1,7 +1,7 @@
 # TODO:
 
-- [ ] Implement UI
-- [ ] Implement configs
+- [ ] Implement UI (in progress)
+- [ ] Implement configs (in progress)
 
 # Roadmap:
 

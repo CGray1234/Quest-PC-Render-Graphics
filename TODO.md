@@ -1,4 +1,4 @@
 # TODO:
 
-  [ ] Implement UI
-  [ ] Implement configs
+- [ ] Implement UI
+- [ ] Implement configs

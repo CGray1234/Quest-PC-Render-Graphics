@@ -2,6 +2,10 @@
 
 This mod enables PC graphics for rendering!
 
+# Info
+
+This mod is in VERY early development and some aspects may not function as intended. If something is not functioning properly, please submit an issue.
+
 ## Credits
 
 * [zoller27osu](https://github.com/zoller27osu), [Sc2ad](https://github.com/Sc2ad) and [jakibaki](https://github.com/jakibaki) - [beatsaber-hook](https://github.com/sc2ad/beatsaber-hook)

@@ -2,12 +2,12 @@
   "sharedDir": "shared",
   "dependenciesDir": "extern",
   "info": {
-    "name": "PC Graphics",
-    "id": "PC-Graphics",
-    "version": "0.1.0",
-    "url": null,
+    "name": "PC Render Graphics",
+    "id": "PC-Render-Graphics",
+    "version": "0.1.1",
+    "url": "https://github.com/CGray1234/Quest-PC-Graphics/tree/ui-implementation",
     "additionalData": {
-      "overrideSoName": "libPC-Graphics.so"
+      "overrideSoName": "libPC-Render-Graphics.so"
     }
   },
   "dependencies": [
@@ -28,6 +28,21 @@
     {
       "id": "codegen",
       "versionRange": "^0.14.0",
+      "additionalData": {}
+    },
+    {
+      "id": "questui",
+      "versionRange": "^0.11.0",
+      "additionalData": {}
+    },
+    {
+      "id": "config-utils",
+      "versionRange": "^0.6.0",
+      "additionalData": {}
+    },
+    {
+      "id": "custom-types",
+      "versionRange": "^0.12",
       "additionalData": {}
     }
   ],

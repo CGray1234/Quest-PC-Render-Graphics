@@ -18,12 +18,14 @@
 #include "UnityEngine/MeshRenderer.hpp"
 #include "UnityEngine/PrimitiveType.hpp"
 
+#include "Config.hpp"
+
 using namespace GlobalNamespace;
 
 MAKE_AUTO_HOOK_MATCH(DistortionWalls, &GlobalNamespace::ConditionalMaterialSwitcher::Awake, void, GlobalNamespace::ConditionalMaterialSwitcher* instance)
 {
         BoolSO* use_grappass = (BoolSO*)UnityEngine::ScriptableObject::CreateInstance(csTypeOf(BoolSO*));
-        use_grappass->value = true;
+        use_grappass->value = getGraphicsConfig().enablePCWalls.GetValue();
         instance->value = use_grappass;
 
         DistortionWalls(instance);
@@ -33,6 +35,6 @@ MAKE_AUTO_HOOK_MATCH(Activation_Awake, &GlobalNamespace::ConditionalActivation::
 {
     Activation_Awake(instance);
 
-    instance->get_gameObject()->SetActive(true);
+    instance->get_gameObject()->SetActive(getGraphicsConfig().enablePCWalls.GetValue());
     UnityEngine::QualitySettings::set_antiAliasing(1);
 }

@@ -6,8 +6,11 @@
 
 #include "hooks.hpp"
 
-MAKE_AUTO_HOOK_MATCH(Reflections, &GlobalNamespace::MainSettingsModelSO::Load, void, GlobalNamespace::MainSettingsModelSO* self, bool forced) {
-        self->mirrorGraphicsSettings->set_value(3);
+#include "Config.hpp"
 
-        Reflections(self, forced);
+MAKE_AUTO_HOOK_MATCH(Reflections, &GlobalNamespace::MainSettingsModelSO::Load, void, GlobalNamespace::MainSettingsModelSO* self, bool forced) {
+    
+    self->mirrorGraphicsSettings->set_value(getGraphicsConfig().enableMirror.GetValue());
+
+    Reflections(self, forced);
 }

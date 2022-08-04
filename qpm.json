@@ -2,32 +2,46 @@
   "sharedDir": "shared",
   "dependenciesDir": "extern",
   "info": {
-    "name": "PC Graphics",
-    "id": "PC-Graphics",
-    "version": "0.1.0",
-    "url": null,
-    "additionalData": {
-      "overrideSoName": "libPC-Graphics.so"
-    }
+    "name": "PC Render Graphics",
+    "id": "PC-Render-Graphics",
+    "version": "0.2.0",
+    "url": "https://github.com/CGray1234/Quest-PC-Render-Graphics",
+    "additionalData": {}
   },
   "dependencies": [
     {
       "id": "beatsaber-hook",
       "versionRange": "^2.3.0",
-      "additionalData": {
-        "extraFiles": [
-          "src/inline-hook"
-        ]
-      }
+      "additionalData": {}
     },
     {
       "id": "modloader",
-      "versionRange": "=1.2.3",
+      "versionRange": "^1.2.3",
       "additionalData": {}
     },
     {
       "id": "codegen",
       "versionRange": "^0.14.0",
+      "additionalData": {}
+    },
+    {
+      "id": "questui",
+      "versionRange": "^0.11.0",
+      "additionalData": {}
+    },
+    {
+      "id": "config-utils",
+      "versionRange": "^0.6.0",
+      "additionalData": {}
+    },
+    {
+      "id": "custom-types",
+      "versionRange": "^0.12",
+      "additionalData": {}
+    },
+    {
+      "id": "jni-utils",
+      "versionRange": "^1.0.9",
       "additionalData": {}
     }
   ],

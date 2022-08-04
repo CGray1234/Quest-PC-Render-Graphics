@@ -1,5 +1,7 @@
-#include "main.hpp"
-#include "hooks.hpp"
+
+#include "Includes.hpp"
+
+DEFINE_CONFIG(ModConfig);
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
@@ -16,8 +18,6 @@ Logger& getLogger() {
     return *logger;
 }
 
-
-
 // Called at the early stages of game loading
 extern "C" void setup(ModInfo& info) {
     info.id = ID;
@@ -31,6 +31,12 @@ extern "C" void setup(ModInfo& info) {
 // Called later on in the game loading - a good time to install function hooks
 extern "C" void load() {
     il2cpp_functions::Init();
+    QuestUI::Init();
+
+    getModConfig().Init(modInfo);
+    QuestUI::Init();
+    QuestUI::Register::RegisterMainMenuModSettingsViewController<PCGraphics::pcgViewController*>(modInfo, "PC-Graphics");
+    QuestUI::Register::RegisterModSettingsViewController<PCGraphics::pcgViewController*>(modInfo, "PC-Graphics");
 
     getLogger().info("Installing hooks...");
     

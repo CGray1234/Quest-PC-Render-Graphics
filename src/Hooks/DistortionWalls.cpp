@@ -2,6 +2,8 @@
 
 #include "hooks.hpp"
 
+#include "ModConfig.hpp"
+
 #include "GlobalNamespace/ConditionalMaterialSwitcher.hpp"
 #include "GlobalNamespace/ConditionalActivation.hpp"
 #include "GlobalNamespace/BoolSO.hpp"
@@ -22,17 +24,30 @@ using namespace GlobalNamespace;
 
 MAKE_AUTO_HOOK_MATCH(DistortionWalls, &GlobalNamespace::ConditionalMaterialSwitcher::Awake, void, GlobalNamespace::ConditionalMaterialSwitcher* instance)
 {
-        BoolSO* use_grappass = (BoolSO*)UnityEngine::ScriptableObject::CreateInstance(csTypeOf(BoolSO*));
-        use_grappass->value = true;
-        instance->value = use_grappass;
+        if (getModConfig().DistortionWalls.GetValue() == true) {
+            BoolSO* use_grappass = (BoolSO*)UnityEngine::ScriptableObject::CreateInstance(csTypeOf(BoolSO*));
+            use_grappass->value = true;
+            instance->value = use_grappass;
 
-        DistortionWalls(instance);
+            DistortionWalls(instance);
+        }
+        else {
+            return;
+        }
+        
 }
 
 MAKE_AUTO_HOOK_MATCH(Activation_Awake, &GlobalNamespace::ConditionalActivation::Awake, void, GlobalNamespace::ConditionalActivation* instance)
 {
+    if (getModConfig().DistortionWalls.GetValue() == true) {
     Activation_Awake(instance);
 
     instance->get_gameObject()->SetActive(true);
     UnityEngine::QualitySettings::set_antiAliasing(1);
+    }
+    else {
+        instance->get_gameObject()->SetActive(false);
+        UnityEngine::QualitySettings::set_antiAliasing(0);
+    }
+
 }

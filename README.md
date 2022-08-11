@@ -4,7 +4,7 @@ This mod enables PC graphics for rendering!
 
 # Info
 
-This mod is no longer in development because of a qpackages.com wipe
+This mod is no longer in development because all packages from qpackages.com were accidentally wiped off of the site
 
 ## Credits
 

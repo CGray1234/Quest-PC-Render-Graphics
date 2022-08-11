@@ -4,9 +4,7 @@ This mod enables PC graphics for rendering!
 
 # Info
 
-This mod is in VERY early development and some aspects may not function as intended. If something is not functioning properly, please submit an issue.
-
-Beta/pre-release versions do get released, and you can tell which ones are beta by looking at the cover image. If it is glitchy, it is a beta version. If it looks normal, it is a working version.
+This mod is no longer in development because of a qpackages.com wipe
 
 ## Credits
 
